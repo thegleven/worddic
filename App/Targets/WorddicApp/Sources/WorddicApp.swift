@@ -2,10 +2,10 @@ import SwiftUI
 import WorddicAppUI
 
 @main
-struct WorddicAppApp: App {
+struct WorddicApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
