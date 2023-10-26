@@ -10,22 +10,7 @@ public struct MainView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 20.0) {
-                
-                HStack {
-                    Spacer()
-                    VStack{
-                        Button(action: {}) {
-                            Image(systemName: "gearshape")
-                                .resizable()
-                                .frame(width: 30.0, height: 30.0)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .padding()
-                }
 
-                Spacer()
-                
                 Button(action: {}) {
                     HStack {
                         Image("orangeButton")
@@ -55,25 +40,7 @@ public struct MainView: View {
                             )
                     }
                 }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    HStack {
-                        Image("orangeButton")
-                            .resizable()
-                            .frame(width: 250.0, height: 100.0)
-                            .overlay(
-                                (Text(Image(systemName: "rectangle.portrait.and.arrow.forward")) + Text(" Exit"))
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 30))
-                                    .fontWeight(.heavy)
-                                , alignment: .center
-                            )
-                    }
-                }
-                
-                Spacer()
+
             }
         }
     }
