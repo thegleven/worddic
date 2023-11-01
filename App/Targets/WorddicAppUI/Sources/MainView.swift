@@ -1,6 +1,9 @@
 import SwiftUI
 
 public struct MainView: View {
+    
+    @Environment(\.openWindow) private var openWindow
+    
     public init() {}
 
     public var body: some View {
@@ -11,7 +14,10 @@ public struct MainView: View {
             
             VStack(alignment: .center, spacing: 20.0) {
 
-                Button(action: {}) {
+                Button(action: {
+                   
+                    openWindow(id: "first")
+                }) {
                     HStack {
                         Image("orangeButton")
                             .resizable()
