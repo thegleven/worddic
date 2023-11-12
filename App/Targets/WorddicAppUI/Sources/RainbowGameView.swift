@@ -19,6 +19,7 @@ struct RainbowGameView: View {
     @State private var selectedColor: Color = .blue
     @State private var currentLine = Line()
     @State private var lines: [Line] = []
+    @State private var thickness: Double = 1.0
     
     private let colors: [Color] = [.red, .yellow, .orange, .purple, .blue, .indigo, .green, .black, .white]
     
@@ -50,12 +51,31 @@ struct RainbowGameView: View {
                     }
                 }
                 
-                ColorPickerView(selectedColor: $selectedColor)
-                    .onChange(of: selectedColor) {newColor in
-                        currentLine.color = newColor
+                VStack {
+                    ColorPickerView(selectedColor: $selectedColor)
+                        .onChange(of: selectedColor) {newColor in
+                            currentLine.color = newColor
+                        }
+                    
+                    HStack {
+                        Text("Thickness")
+                            .foregroundColor(.black)
+                            .font(.system(size: 20))
+                          //  .fontWeight(.heavy)
+                        
+                        
+                        Slider(value: $thickness, in: 1...20)
+                            .frame(maxWidth: 220)
+                            .onChange(of: thickness) {
+                                newThickness in currentLine.lineWidth = newThickness
+                                
+                            }
+                        //  Divider()
+ 
                     }
+                }
                 
-                Spacer()
+//                Spacer()
                 
                 Canvas { context, size in
                     
@@ -73,7 +93,7 @@ struct RainbowGameView: View {
                     self.lines.append(self.currentLine)
                 })
                 .onEnded({ value in
-                    self.currentLine = Line(points: [], color: selectedColor)
+                    self.currentLine = Line(points: [], color: selectedColor, lineWidth: thickness)
                 })
                 )
                 .padding()
