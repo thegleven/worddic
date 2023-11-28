@@ -1,11 +1,3 @@
-//
-//  RainbowGameView.swift
-//  WorddicApp
-//
-//  Created by theshamuel on 01/11/2023.
-//  Copyright © 2023 tuist.io. All rights reserved.
-//
-
 import SwiftUI
 
 struct Line {
@@ -52,6 +44,7 @@ struct RainbowGameView: View {
                 }
                 
                 VStack {
+                    OrangeButton(buttonText: "Find123", buttonImage: Image(systemName: "plus.app"))
                     ColorPickerView(selectedColor: $selectedColor)
                         .onChange(of: selectedColor) {newColor in
                             currentLine.color = newColor

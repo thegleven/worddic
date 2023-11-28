@@ -1,11 +1,3 @@
-//
-//  SettingsView.swift
-//  WorddicAppUI
-//
-//  Created by theshamuel on 26/10/2023.
-//  Copyright © 2023 tuist.io. All rights reserved.
-//
-
 import SwiftUI
 
 struct FindGameView: View {

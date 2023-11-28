@@ -1,21 +1,17 @@
 import SwiftUI
 
-public struct MainView: View {
+struct MainView: View {
     
     @Environment(\.openWindow) private var openWindow
     
-    public init() {}
-
-    public var body: some View {
+    var body: some View {
         ZStack {
             //fon
             Color(.systemMint)
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 20.0) {
-
                 Button(action: {
-                   
                     openWindow(id: "first")
                 }) {
                     HStack {
@@ -46,15 +42,14 @@ public struct MainView: View {
                             )
                     }
                 }
+                
+              
 
             }
         }
     }
+    
 }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
+#Preview {
+    MainView()
 }
